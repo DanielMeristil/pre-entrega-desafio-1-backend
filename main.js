@@ -1,60 +1,108 @@
 //1.Detectar productos en stock en la tienda.
-let Productos = [{
-    
-    Television: "sony",
+class ProductMnager{
+constructor() { 
+     this.products = [];
+
+    let productos  = [
+    {
+    tilulo: "television",
+    nombre: "sony",
     descripcion: "television led 24 pulgadas",
     precio: 200,
+    code:"abc122",
+    id: 7,
     stock: 2
+
 },{
-   computadoras: "hp 2T 8RAM",
+    titulo: "computadoras",
+   nombre: "hp 2T 8RAM",
    descripcion: "la super maquina poderosa",
    precio: 500,
+   code: "abc123",
+   id: 9,
    stock: 5
 
 },{
-   lavadora: "Samsung",
+    titulo: "lavadora",
+   nombre: "Samsung",
    descripcion: "una lavadora robotica",
    precio: 1000,
+   code: "abc124",
+   id: 5,
    stock:0
-}]
+}];
 
-let ProductosConStock = [];
-for (let producto in Productos){
-   if(Productos.stock > 0){
-    ProductosConStock.push(Productos)
-   }
+
+// addProducts(titulo, nombre, descripcion, precio, code, id, stoct); 
+//
+ {
+    this.products.push({titulo, nombre, descripcion, precio, code, id, stock });
+ }
+ getProducts(); {
+    return this.products;
+ }
 }
-console.log(ProductosConStock);
+getproductById(id){
+    if(!this.products.find((products)=>products.id === id)) {
+        console.log("not found")
+    } else{
+        console.log("Existe")
+    }
+}
+}
+
+
+let productosConStock = [];
+for (let producto in productos){
+  if(productos.stock > 0){
+    productosConStock.push(productos)
+  }
+}
+console.log(productosConStock);
 
 
 //2 Buscar productos que se vende más de 100 en la tienda
-let productos = [{
-
+let productos = [
+    {
+    
+    titulo: "audifonos",
     audifonos: "Samsung",
-    imagen: "img",
+    imagen: "sin img",
     descripcion: "la super audifono 100% inalabrico",
     precio:20,
     stock: 500,
+    code: "abc103",
+    id: 3,
     ventas: 70
 
 
 },{
+
+  titulo: "perfume",
   Perfume: "chrome loris azaro",
-  imagen: "img",
+  imagen: "sin img",
   descripcion: "la fragancia más perfecta para una noche de locura",
   precio: 1200,
+  code: "abc178",
+  id: 7,
   stock: 300,
   ventas: 150
 
 },{
+
+   titulo: "libro",
    libro: "American Accent training",
-   imagen: "img",
+   imagen: "sin img",
    descripcion: "New methode to learn american english accent",
    precio: 200,
+   code: "abc143",
+   id: 9,
    stock: 150,
    ventas: 90
 
 }]
+
+
 
 let productosConVentas = []
 for (let producto of productos){
